@@ -53,3 +53,19 @@ def showProducts(products):
         print("Name:", p["name"])
         print("Price:", p["price"])
         print("Quantity:", p["quantity"])
+
+def removeProduct(products):
+    try:
+        productID = int(input("enter product ID: "))
+
+        for p in products:
+            if p["id"] == productID:
+                products.remove(p)
+                saveProducts(products)
+                print("product removed")
+                return
+
+        print("product not found")
+
+    except ValueError:
+        print("please enter a valid ID")
