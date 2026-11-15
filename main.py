@@ -1,4 +1,3 @@
-
 from database import *
 from product import addProduct, showProducts, removeProduct, filterProducts
 from csv_operations import saveToCSV, showCSV
