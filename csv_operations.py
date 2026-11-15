@@ -16,3 +16,33 @@ def saveToCSV(products):
 
     except Exception as e:
         print("Error:", e)
+
+def loadFromCSV():
+    try:
+        file = open("products.csv", "r", encoding="utf-8")
+        reader = csv.DictReader(file)
+
+        products = []
+
+        for p in reader:
+            products.append({
+                "id": int(p["id"]),
+                "name": p["name"],
+                "price": float(p["price"]),
+                "quantity": int(p["quantity"])
+            })
+
+        file.close()
+        return products
+
+    except FileNotFoundError as e:
+        print("file not found:", e)
+        return []
+
+    except (ValueError, KeyError) as e:
+        print("invalid CSV data:", e)
+        return []
+
+    except Exception as e:
+        print("Error:", e)
+        return []
