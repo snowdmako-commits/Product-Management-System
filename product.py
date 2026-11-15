@@ -69,3 +69,28 @@ def removeProduct(products):
 
     except ValueError:
         print("please enter a valid ID")
+
+def filterProducts(products):
+    if not products:
+        print("product list is empty")
+        return
+
+    print("""
+        1. Ascending (Low - High)
+        2. Descending (High - Low)
+    """)
+
+    choice = input("enter choice: ")
+
+    if choice == "1":
+        sortedProducts = sorted(products,key=lambda p: p["price"])
+
+    elif choice == "2":
+        sortedProducts = sorted(products,key=lambda :p["price"],reverse=True)
+
+    else:
+        print("invalid choice")
+        return
+
+    for p in sortedProducts:
+        print(p)
