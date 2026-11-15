@@ -10,3 +10,8 @@ def loadProducts():
     except FileNotFoundError:
         print("file not found")
         return []
+
+def saveProducts(products):
+    file = open("products.json", "w", encoding="utf-8")
+    json.dump(products, file, indent=4)
+    file.close()
