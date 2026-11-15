@@ -46,3 +46,17 @@ def loadFromCSV():
     except Exception as e:
         print("Error:", e)
         return []
+
+def showCSV():
+    try:
+        products = loadFromCSV()
+
+        if not products:
+            print("no products found")
+            return
+
+        for p in products:
+            print(p)
+
+    except Exception as e:
+        print("Error:", e)
