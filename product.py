@@ -41,3 +41,15 @@ def addProduct(products):
 
     except ValueError:
         print("please enter valid numbers")
+
+def showProducts(products):
+    if not products:
+        print("product list is empty")
+        return
+
+    for p in products:
+        print("--------------------")
+        print("ID:", p["id"])
+        print("Name:", p["name"])
+        print("Price:", p["price"])
+        print("Quantity:", p["quantity"])
