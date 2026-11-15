@@ -94,3 +94,4 @@ def filterProducts(products):
 
     for p in sortedProducts:
         print(p)
+        
